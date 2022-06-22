@@ -1,0 +1,62 @@
+body{
+    padding: 60px 0;
+    color:#707070
+}
+
+.search-box{
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.keyword{
+    width: 50%;
+    padding: 25px;
+}
+.keyword-button{
+    margin-left: 15px;
+}
+
+.card{
+    width: 100%;
+    max-width: 75%;
+    margin:auto;
+    margin-top: 20px;
+}
+
+
+.card-body{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-title{
+    font-size:22px;
+    margin-left:30px;
+    margin-bottom: 0;
+}
+
+.create-form{
+    width: 100%;
+    max-width: 50%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.edit-form{
+    width: 100%;
+    max-width: 50%;
+    margin: auto;
+    margin-top: 75px;
+}
+
+.danger-button{
+    position: absolute;
+    top: 16%;
+    right: 25%;
+}
