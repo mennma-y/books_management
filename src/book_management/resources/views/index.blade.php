@@ -25,7 +25,7 @@
         </div>
     @endforeach
     
-    <!-- ページネーション -->
+    <!-- ページネーションを追加 -->
     <div style="width: 10%; margin:50px auto;">  
         {!! $books->appends(['keyword'=>$keyword])->render()!!}
     </div>
