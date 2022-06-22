@@ -4,6 +4,12 @@
 
 
 @section('content')
+    @if (session('status'))
+        <div class="alert alert-success" style="padding: 25px; width:80%; margin:30px auto;" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+
     <div class="main-title">
         <h2 style="margin-bottom: 30px;">書籍一覧</h2>
     </div>

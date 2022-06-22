@@ -19,11 +19,17 @@
         <div class="form-group edit-form">
             <label for="title" style="float: left;">タイトル</label>
             <input type="text" style="padding:25px;" class="form-control" id="title" name="title" value="{{$book->title}}">
+            @error('title')
+                    <p><span style="color:red;">{{$message}}</span></p>
+            @enderror
             
         </div>
         <div class="form-group edit-form">
             <label for="url" style="float:left;">書籍へのリンク(URL)</label>
             <input type="text" style="padding:25px;" class="form-control" id="url" name="url" value="{{$book->url}}">
+            @error('url')
+                    <p><span style="color:red;">{{$message}}</span></p>
+            @enderror
         </div>
     
         <button type="submit" class="btn btn-primary" style="margin-top:90px; padding:15px 20px;">更新ボタン</button>

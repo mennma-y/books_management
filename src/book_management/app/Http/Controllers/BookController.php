@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use Facade\Ignition\QueryRecorder\Query;
+use App\Http\Requests\BookRequest;
 
 class BookController extends Controller
 {
@@ -28,13 +29,14 @@ class BookController extends Controller
         return view('create');
     }
 
-    public function store(Request $request){
+    public function store(BookRequest $request){
         $data = $request->all();
         $book = Book::insertGetId([
             'title'=> $data['title'],
             'url'=>$data['url'],
         ]);
-
+        
+        session()->flash('status','新規登録が完了しました！');
         return redirect()->route('index');
     }
 
@@ -44,13 +46,14 @@ class BookController extends Controller
         return view('edit',compact('book'));  
     }
 
-    public function update(Request $request , $id){
+    public function update(BookRequest $request , $id){
         $data = $request->all();
         $book = Book::where('id',$id)->update([
             'title'=> $data['title'],
             'url'=> $data['url'],
         ]);
-
+        
+        session()->flash('status','編集が完了しました！');
         return redirect()->route('index');  
 
     }
@@ -59,6 +62,8 @@ class BookController extends Controller
         $book = Book::where('id',$id)->update([
             'status'=>0,
         ]);
+
+        session()->flash('status','削除が完了しました！');
         return redirect()->route('index');
     }
 
